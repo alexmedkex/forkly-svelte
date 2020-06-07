@@ -1,0 +1,25 @@
+@import "./theme";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 25px 50px;
+  padding: 0;
+  background-color: $background;
+  font-family: "Nunito", sans-serif;
+  color: $text;
+}
+
+input {
+  border-style: none;
+  outline: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+$border-radius: 4px;
