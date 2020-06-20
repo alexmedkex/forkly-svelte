@@ -16,10 +16,19 @@ body {
 input {
   border-style: none;
   outline: 0px;
+  color: $text;
+}
+
+input:empty:before {
+  content: attr(placeholder);
+  color: #ccc;
+  opacity: 50%;
+}
+
+input:focus {
+  outline: none;
 }
 
 a {
   text-decoration: none;
 }
-
-$border-radius: 4px;
