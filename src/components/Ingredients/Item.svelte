@@ -1,39 +1,39 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { lastId } from "../stores";
+  import { lastId } from "./stores";
   export let id = undefined;
 
   const dispatch = createEventDispatcher();
 
   let lastItemId;
 
-  lastId.subscribe(id => {
+  lastId.subscribe((id) => {
     lastItemId = id;
   });
 
   const inputs = [
     {
       value: "",
-      placeholder: "Ingredient"
+      placeholder: "Ingredient",
     },
     {
       value: "",
-      placeholder: "Quantity"
+      placeholder: "Quantity",
     },
     {
       value: "",
-      placeholder: "Measurement"
-    }
+      placeholder: "Measurement",
+    },
   ];
 
   function onInput() {
     if (inputs[0].value === "" && inputs[1].value === "") {
       dispatch("clear", {
-        id
+        id,
       });
     } else {
       dispatch("input", {
-        id
+        id,
       });
     }
   }
@@ -45,14 +45,27 @@
       return {
         delay,
         duration,
-        css: t => `opacity: ${t * o}`
+        css: (t) => `opacity: ${t * o}`,
       };
     }
   }
 </script>
 
-<style src="./Item.scss">
+<style lang="scss">
+  .faded {
+    opacity: 0.2;
+  }
 
+  .item {
+    display: grid;
+    grid: 1fr / 1fr 1fr 1fr;
+    margin-bottom: 10px;
+  }
+
+  input {
+    font-size: 15px;
+    background: transparent;
+  }
 </style>
 
 <div class="item">
