@@ -135,7 +135,7 @@ export default {
 
 			alias({
 				entries: [
-					{ find: '@components', replacement: './src/components' },
+					//{ find: '@components', replacement: './src/components' },
 					{ find: '@style', replacement: './src/style' },
 				]
 			})
