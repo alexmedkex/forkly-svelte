@@ -1,6 +1,5 @@
 <script>
-  import Header from "@components/Header.svelte";
-  let test = "test";
+  import Header from "../components/Header.svelte";
 </script>
 
 <style lang="scss" global>
@@ -10,9 +9,6 @@
     margin-bottom: 50px;
   }
 </style>
-
-<textarea bind:value={test}></textarea>
-{test}
 
 <div class="header">
   <Header />

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import SearchBox from "@components/SearchBox.svelte";
-  import Button from "@components/Button.svelte";
+  import SearchBox from "../components/SearchBox.svelte";
+  import Button from "../components/Button.svelte";
 </script>
 
 <style lang="scss">
