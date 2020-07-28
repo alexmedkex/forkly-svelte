@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { lastId } from "./store";
-  import { fade, onInput } from "../../../dynamic-list.ts"
-  
+  import { fade, onInput } from "../../../dynamic-list.ts";
+
   export let id = undefined;
 
   const dispatch = createEventDispatcher();
@@ -34,7 +34,6 @@
     id,
     () => inputs[0].value === "" && inputs[1].value === ""
   );
-
 </script>
 
 <style lang="scss">
@@ -49,13 +48,14 @@
   }
 </style>
 
-<div class="item">
+<div
+  class={lastItemId === id ? 'faded item' : 'item'}
+  in:fade={{ enabled: lastItemId === id }}
+  on:input={onIngredientInput}>
+  
   {#each inputs as input}
     <input
-      class={lastItemId === id ? 'faded' : ''}
       bind:value={input.value}
-      in:fade={{ enabled: lastItemId === id }}
-      on:input={onIngredientInput}
       type="text"
       placeholder={input.placeholder} />
   {/each}

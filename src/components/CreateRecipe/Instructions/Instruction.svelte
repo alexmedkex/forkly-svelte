@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
   import { lastId } from "./store";
-  import { fade, onInput } from "../../../dynamic-list.ts"
+  import { fade, onInput } from "../../../dynamic-list.ts";
 
   export let number: number;
   export let id = undefined;
@@ -9,8 +9,8 @@
   const dispatch = createEventDispatcher();
 
   const item = {
-    value: ''
-  }
+    value: "",
+  };
 
   let lastItemId;
 
@@ -34,17 +34,22 @@
     margin-top: 10px;
     padding: 20px;
   }
+
+  .faded {
+    opacity: 0.2;
+  }
+
+  .instruction {
+    margin-top: 10px;
+  }
 </style>
 
-<div>
+<div
+  in:fade={{ enabled: lastItemId === id }}
+  on:input={onInstructionInput}
+  class={lastItemId === id ? 'faded instruction' : 'instruction'}>
   {number}
   <div class="box">
-    <input
-      class={lastItemId === id ? 'faded' : ''}
-      bind:value={item.value}
-      in:fade={{ enabled: lastItemId === id }}
-      on:input={onInstructionInput}
-      type="text"
-      placeholder='Add instructions' />
+    <input bind:value={item.value} type="text" placeholder="Add instructions" />
   </div>
 </div>

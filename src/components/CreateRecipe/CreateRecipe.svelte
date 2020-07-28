@@ -9,9 +9,10 @@
 
   .container {
     display: grid;
+    row-gap: 30px;
     grid: auto / 1fr 1fr;
     background-color: $accent_dark2;
-    height: 100vh;
+    height: 100%;
     padding: 30px;
     border-radius: $border-radius;
   }

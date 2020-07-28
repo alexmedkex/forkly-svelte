@@ -22,10 +22,6 @@
   };
 </script>
 
-<style lang="scss">
-  @import "style/theme.scss";
-</style>
-
 <div>
   Instructions
   <div>
