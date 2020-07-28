@@ -1,6 +1,7 @@
 <script lang="ts">
-  import Ingredients from "../Ingredients/Ingredients.svelte";
-  let title = "title";
+  import Ingredients from "./Ingredients/index.svelte";
+  import Utensils from "./Utensils.svelte";
+  import Instructions from "./Instructions/index.svelte";
 </script>
 
 <style lang="scss">
@@ -15,19 +16,28 @@
     border-radius: $border-radius;
   }
 
-  .recipe-title {
-    font-size: 35px;
+  .left-section {
+    grid-column-start: 1;
   }
 
-  input {
-    background-color: $accent_dark2;
+  .title {
     font-size: 35px;
   }
 </style>
 
 <div class="container">
-  <div class="recipe-title">
-    <input bind:value={title} placeholder="Recipe title" />
+  <input class="title" placeholder="Recipe title" />
+
+  <div class="left-section">
+    <Ingredients />
   </div>
-  <Ingredients />
+
+  <div class="left-section">
+    <Utensils />
+  </div>
+
+  <div class="left-section">
+    <Instructions />
+  </div>
+
 </div>
