@@ -39,8 +39,11 @@
     opacity: 0.2;
   }
 
-  .instruction {
-    margin-top: 10px;
+  .rounded {
+    border: 1px solid $accent-dark1;
+    border-radius: 8px;
+    margin: 20px 50px;
+    opacity: 30%;
   }
 </style>
 
@@ -52,4 +55,5 @@
   <div class="box">
     <input bind:value={item.value} type="text" placeholder="Add instructions" />
   </div>
+  <hr class="rounded" />
 </div>
